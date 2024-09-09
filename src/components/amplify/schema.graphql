@@ -1,0 +1,123 @@
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+type ContactForm {
+  comment: String
+  email: String!
+  name: String
+}
+
+type ContactFormConnection {
+  items: [ContactForm]
+  nextToken: String
+}
+
+type Mutation {
+  createContactForm(input: CreateContactFormInput!): ContactForm
+  deleteContactForm(input: DeleteContactFormInput!): ContactForm
+  updateContactForm(input: UpdateContactFormInput!): ContactForm
+}
+
+type Query {
+  getContactForm(email: String!): ContactForm
+  listContactForms(filter: TableContactFormFilterInput, limit: Int, nextToken: String): ContactFormConnection
+}
+
+type Subscription {
+  onCreateContactForm(comment: String, email: String, name: String): ContactForm @aws_subscribe(mutations : ["createContactForm"])
+  onDeleteContactForm(comment: String, email: String, name: String): ContactForm @aws_subscribe(mutations : ["deleteContactForm"])
+  onUpdateContactForm(comment: String, email: String, name: String): ContactForm @aws_subscribe(mutations : ["updateContactForm"])
+}
+
+input CreateContactFormInput {
+  comment: String
+  email: String!
+  name: String
+}
+
+input DeleteContactFormInput {
+  email: String!
+}
+
+input ModelSizeInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input TableBooleanFilterInput {
+  attributeExists: Boolean
+  eq: Boolean
+  ne: Boolean
+}
+
+input TableContactFormFilterInput {
+  comment: TableStringFilterInput
+  email: TableStringFilterInput
+  name: TableStringFilterInput
+}
+
+input TableFloatFilterInput {
+  attributeExists: Boolean
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input TableIDFilterInput {
+  attributeExists: Boolean
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  size: ModelSizeInput
+}
+
+input TableIntFilterInput {
+  attributeExists: Boolean
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input TableStringFilterInput {
+  attributeExists: Boolean
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  size: ModelSizeInput
+}
+
+input UpdateContactFormInput {
+  comment: String
+  email: String!
+  name: String
+}
