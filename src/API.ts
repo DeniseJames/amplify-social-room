@@ -1,179 +1,195 @@
-/* tslint:disable */
-/* eslint-disable */
-//  This file was automatically generated and should not be edited.
+// API.ts
 
 export type CreateContactFormInput = {
-  email: string,
-  name?: string | null,
-  comment?: string | null,
+  comment?: string | null;
+  email: string;
+  name?: string | null;
 };
 
 export type ContactForm = {
-  __typename: "ContactForm",
-  email: string,
-  name?: string | null,
-  comment?: string | null,
-};
-
-export type UpdateContactFormInput = {
-  email: string,
-  name?: string | null,
-  comment?: string | null,
+  __typename: "ContactForm";
+  comment?: string | null;
+  email: string;
+  name?: string | null;
 };
 
 export type DeleteContactFormInput = {
-  email: string,
+  email: string;
+};
+
+export type UpdateContactFormInput = {
+  comment?: string | null;
+  email: string;
+  name?: string | null;
 };
 
 export type TableContactFormFilterInput = {
-  email?: TableStringFilterInput | null,
-  name?: TableStringFilterInput | null,
-  comment?: TableStringFilterInput | null,
+  comment?: TableStringFilterInput | null;
+  email?: TableStringFilterInput | null;
+  name?: TableStringFilterInput | null;
 };
 
 export type TableStringFilterInput = {
-  ne?: string | null,
-  eq?: string | null,
-  le?: string | null,
-  lt?: string | null,
-  ge?: string | null,
-  gt?: string | null,
-  contains?: string | null,
-  notContains?: string | null,
-  between?: Array< string | null > | null,
-  beginsWith?: string | null,
-  attributeExists?: boolean | null,
-  size?: ModelSizeInput | null,
+  attributeExists?: boolean | null;
+  beginsWith?: string | null;
+  between?: Array<string | null> | null;
+  contains?: string | null;
+  eq?: string | null;
+  ge?: string | null;
+  gt?: string | null;
+  le?: string | null;
+  lt?: string | null;
+  ne?: string | null;
+  notContains?: string | null;
+  size?: ModelSizeInput | null;
 };
 
 export type ModelSizeInput = {
-  ne?: number | null,
-  eq?: number | null,
-  le?: number | null,
-  lt?: number | null,
-  ge?: number | null,
-  gt?: number | null,
-  between?: Array< number | null > | null,
+  between?: Array<number | null> | null;
+  eq?: number | null;
+  ge?: number | null;
+  gt?: number | null;
+  le?: number | null;
+  lt?: number | null;
+  ne?: number | null;
 };
 
 export type ContactFormConnection = {
-  __typename: "ContactFormConnection",
-  items?:  Array<ContactForm | null > | null,
-  nextToken?: string | null,
+  __typename: "ContactFormConnection";
+  items?: Array<ContactForm | null> | null;
+  nextToken?: string | null;
 };
 
 export type CreateContactFormMutationVariables = {
-  input: CreateContactFormInput,
+  input: CreateContactFormInput;
 };
 
 export type CreateContactFormMutation = {
-  createContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
-};
-
-export type UpdateContactFormMutationVariables = {
-  input: UpdateContactFormInput,
-};
-
-export type UpdateContactFormMutation = {
-  updateContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
+  createContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
 };
 
 export type DeleteContactFormMutationVariables = {
-  input: DeleteContactFormInput,
+  input: DeleteContactFormInput;
 };
 
 export type DeleteContactFormMutation = {
-  deleteContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
+  deleteContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
+};
+
+export type UpdateContactFormMutationVariables = {
+  input: UpdateContactFormInput;
+};
+
+export type UpdateContactFormMutation = {
+  updateContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
 };
 
 export type GetContactFormQueryVariables = {
-  email: string,
+  email: string;
 };
 
 export type GetContactFormQuery = {
-  getContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
+  getContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
 };
 
 export type ListContactFormsQueryVariables = {
-  filter?: TableContactFormFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
+  filter?: TableContactFormFilterInput | null;
+  limit?: number | null;
+  nextToken?: string | null;
 };
 
 export type ListContactFormsQuery = {
-  listContactForms?:  {
-    __typename: "ContactFormConnection",
-    items?:  Array< {
-      __typename: "ContactForm",
-      email: string,
-      name?: string | null,
-      comment?: string | null,
-    } | null > | null,
-    nextToken?: string | null,
-  } | null,
+  listContactForms?: {
+    __typename: "ContactFormConnection";
+    items?: Array<{
+      __typename: "ContactForm";
+      comment?: string | null;
+      email: string;
+      name?: string | null;
+    } | null> | null;
+    nextToken?: string | null;
+  } | null;
 };
 
 export type OnCreateContactFormSubscriptionVariables = {
-  email?: string | null,
-  name?: string | null,
-  comment?: string | null,
+  comment?: string | null;
+  email?: string | null;
+  name?: string | null;
 };
 
 export type OnCreateContactFormSubscription = {
-  onCreateContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
-};
-
-export type OnUpdateContactFormSubscriptionVariables = {
-  email?: string | null,
-  name?: string | null,
-  comment?: string | null,
-};
-
-export type OnUpdateContactFormSubscription = {
-  onUpdateContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
+  onCreateContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
 };
 
 export type OnDeleteContactFormSubscriptionVariables = {
-  email?: string | null,
-  name?: string | null,
-  comment?: string | null,
+  comment?: string | null;
+  email?: string | null;
+  name?: string | null;
 };
 
 export type OnDeleteContactFormSubscription = {
-  onDeleteContactForm?:  {
-    __typename: "ContactForm",
-    email: string,
-    name?: string | null,
-    comment?: string | null,
-  } | null,
+  onDeleteContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
+};
+
+export type OnUpdateContactFormSubscriptionVariables = {
+  comment?: string | null;
+  email?: string | null;
+  name?: string | null;
+};
+
+export type OnUpdateContactFormSubscription = {
+  onUpdateContactForm?: {
+    __typename: "ContactForm";
+    comment?: string | null;
+    email: string;
+    name?: string | null;
+  } | null;
+};
+
+// Define and export the GeneratedMutation type
+export type GeneratedMutation<InputType, OutputType> = string & {
+  __generatedMutationInput: InputType;
+  __generatedMutationOutput: OutputType;
+};
+
+// Define and export the GeneratedQuery type
+export type GeneratedQuery<InputType, OutputType> = string & {
+  __generatedQueryInput: InputType;
+  __generatedQueryOutput: OutputType;
+};
+
+// Define and export the GeneratedSubscription type
+export type GeneratedSubscription<InputType, OutputType> = string & {
+  __generatedSubscriptionInput: InputType;
+  __generatedSubscriptionOutput: OutputType;
 };

@@ -10,9 +10,9 @@ type GeneratedMutation<InputType, OutputType> = string & {
 
 export const createContactForm = /* GraphQL */ `mutation CreateContactForm($input: CreateContactFormInput!) {
   createContactForm(input: $input) {
+    comment
     email
     name
-    comment
     __typename
   }
 }
@@ -20,27 +20,27 @@ export const createContactForm = /* GraphQL */ `mutation CreateContactForm($inpu
   APITypes.CreateContactFormMutationVariables,
   APITypes.CreateContactFormMutation
 >;
-export const updateContactForm = /* GraphQL */ `mutation UpdateContactForm($input: UpdateContactFormInput!) {
-  updateContactForm(input: $input) {
-    email
-    name
-    comment
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateContactFormMutationVariables,
-  APITypes.UpdateContactFormMutation
->;
 export const deleteContactForm = /* GraphQL */ `mutation DeleteContactForm($input: DeleteContactFormInput!) {
   deleteContactForm(input: $input) {
+    comment
     email
     name
-    comment
     __typename
   }
 }
 ` as GeneratedMutation<
   APITypes.DeleteContactFormMutationVariables,
   APITypes.DeleteContactFormMutation
+>;
+export const updateContactForm = /* GraphQL */ `mutation UpdateContactForm($input: UpdateContactFormInput!) {
+  updateContactForm(input: $input) {
+    comment
+    email
+    name
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateContactFormMutationVariables,
+  APITypes.UpdateContactFormMutation
 >;

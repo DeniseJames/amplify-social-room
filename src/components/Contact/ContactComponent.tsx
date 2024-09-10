@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/data';
-import type { Schema } from '../../../amplify/data/resource.js';
+import { type Schema } from '../../../amplify/data/resource.js';
 import awsconfig from '../../../src/aws-exports.js';
+import * as APITypes from '../../API';
 
 Amplify.configure(awsconfig);
 
@@ -22,12 +23,13 @@ const ContactComponent: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const input = {
+      const input: APITypes.CreateContactFormInput = {
         email: formState.email,
         name: formState.name,
         comment: formState.comment
       };
-      await client.mutations.createContactForm({ input });
+      
+     // await client.mutations.createContactForm({ input });
       alert('Contact created successfully!');
       setFormState({ email: '', name: '', comment: '' });
     } catch (err) {

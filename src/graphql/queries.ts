@@ -10,9 +10,9 @@ type GeneratedQuery<InputType, OutputType> = string & {
 
 export const getContactForm = /* GraphQL */ `query GetContactForm($email: String!) {
   getContactForm(email: $email) {
+    comment
     email
     name
-    comment
     __typename
   }
 }
@@ -27,9 +27,9 @@ export const listContactForms = /* GraphQL */ `query ListContactForms(
 ) {
   listContactForms(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
+      comment
       email
       name
-      comment
       __typename
     }
     nextToken

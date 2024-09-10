@@ -9,14 +9,14 @@ type GeneratedSubscription<InputType, OutputType> = string & {
 };
 
 export const onCreateContactForm = /* GraphQL */ `subscription OnCreateContactForm(
+  $comment: String
   $email: String
   $name: String
-  $comment: String
 ) {
-  onCreateContactForm(email: $email, name: $name, comment: $comment) {
+  onCreateContactForm(comment: $comment, email: $email, name: $name) {
+    comment
     email
     name
-    comment
     __typename
   }
 }
@@ -24,35 +24,35 @@ export const onCreateContactForm = /* GraphQL */ `subscription OnCreateContactFo
   APITypes.OnCreateContactFormSubscriptionVariables,
   APITypes.OnCreateContactFormSubscription
 >;
-export const onUpdateContactForm = /* GraphQL */ `subscription OnUpdateContactForm(
-  $email: String
-  $name: String
-  $comment: String
-) {
-  onUpdateContactForm(email: $email, name: $name, comment: $comment) {
-    email
-    name
-    comment
-    __typename
-  }
-}
-` as GeneratedSubscription<
-  APITypes.OnUpdateContactFormSubscriptionVariables,
-  APITypes.OnUpdateContactFormSubscription
->;
 export const onDeleteContactForm = /* GraphQL */ `subscription OnDeleteContactForm(
+  $comment: String
   $email: String
   $name: String
-  $comment: String
 ) {
-  onDeleteContactForm(email: $email, name: $name, comment: $comment) {
+  onDeleteContactForm(comment: $comment, email: $email, name: $name) {
+    comment
     email
     name
-    comment
     __typename
   }
 }
 ` as GeneratedSubscription<
   APITypes.OnDeleteContactFormSubscriptionVariables,
   APITypes.OnDeleteContactFormSubscription
+>;
+export const onUpdateContactForm = /* GraphQL */ `subscription OnUpdateContactForm(
+  $comment: String
+  $email: String
+  $name: String
+) {
+  onUpdateContactForm(comment: $comment, email: $email, name: $name) {
+    comment
+    email
+    name
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateContactFormSubscriptionVariables,
+  APITypes.OnUpdateContactFormSubscription
 >;
