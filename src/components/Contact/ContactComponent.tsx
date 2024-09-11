@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/data';
 import { type Schema } from '../../../amplify/data/resource.js';
-import awsconfig from '../../../src/aws-exports.js';
+import awsconfig from '../../aws-exports';
+
 import * as APITypes from '../../API';
 
 Amplify.configure(awsconfig);
