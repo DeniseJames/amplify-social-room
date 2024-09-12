@@ -37,7 +37,7 @@ const NavbarComponent: React.FC = () => {
             Quantum Computer Learning
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className={`d-flex justify-content-between w-100 ${styles.navContent}`}>
             <Nav className="me-auto">

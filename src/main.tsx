@@ -5,6 +5,7 @@ import './index.css'
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css'
 import outputs from '../amplify_outputs.json'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
