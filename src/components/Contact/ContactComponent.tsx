@@ -4,6 +4,7 @@ import { generateClient } from 'aws-amplify/data';
 import { type Schema } from '../../../amplify/data/resource.js';
 import awsconfig from '../../aws-exports.js';
 import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 import * as APITypes from '../../API';
 
@@ -17,6 +18,8 @@ const ContactComponent: React.FC = () => {
     name: '',
     comment: ''
   });
+
+  const navigate = useNavigate();
 
   const setInput = (key: string, value: string) => {
     setFormState({ ...formState, [key]: value });
@@ -32,11 +35,11 @@ const ContactComponent: React.FC = () => {
       };
       
       // await client.mutations.createContactForm({ input });
-      alert('Contact created successfully!');
       setFormState({ email: '', name: '', comment: '' });
+      navigate('/'); // Navigate to the home page after successful submission
     } catch (err) {
       console.error('Error creating contact:', err);
-      alert('Failed to create contact.');
+      // No alert message if submission fails
     }
   };
 
