@@ -4,11 +4,11 @@
       "AuthRoleName": "amplify-amplifysocialroom-dev-45516-authRole",
       "UnauthRoleArn": "arn:aws:iam::976999488553:role/amplify-amplifysocialroom-dev-45516-unauthRole",
       "AuthRoleArn": "arn:aws:iam::976999488553:role/amplify-amplifysocialroom-dev-45516-authRole",
-      "Region": "us-east-1",
+      "Region": "us-east-2",
       "DeploymentBucketName": "amplify-amplifysocialroom-dev-45516-deployment",
       "UnauthRoleName": "amplify-amplifysocialroom-dev-45516-unauthRole",
       "StackName": "amplify-amplifysocialroom-dev-45516",
-      "StackId": "arn:aws:cloudformation:us-east-1:976999488553:stack/amplify-amplifysocialroom-dev-45516/9b708040-6e38-11ef-ac5d-0affc7968caf",
+      "StackId": "arn:aws:cloudformation:us-east-2:976999488553:stack/amplify-amplifysocialroom-dev-45516/9b708040-6e38-11ef-ac5d-0affc7968caf",
       "AmplifyAppId": "dvtv2n1h2qaiy"
     }
   }
