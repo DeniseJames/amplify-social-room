@@ -10,7 +10,7 @@ const HomeComponent: React.FC = () => {
     <main className={styles.home}>
       <header className={styles.header}>
         <h1>Welcome to Quantum Computer Learning</h1>
-        <p>Your one-stop solution for comprehensive nmachine learning, web design, and training services.</p>
+        <p>Your one-stop solution for comprehensive machine learning, web design, and training services.</p>
       </header>
       <section className={styles.section}>
         <MachineLearningComponent />
