@@ -13,6 +13,7 @@ const TrainingComponent = React.lazy(() => import('../src/components/Training/Tr
 const LoginComponent = React.lazy(() => import('./components/LogIn/LoginComponent'));
 const SearchResults = React.lazy(() => import('../src/components/SearchResults/SearchResultsComponent'));
 const ContactComponent = React.lazy(() => import('../src/components/Contact/ContactComponent'));
+const QRCodeScannerComponent = React.lazy(() => import('../src/components/QRCodeScanner/QRCodeScannerComponent'));
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/training" element={<TrainingComponent />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/contact" element={<ContactComponent />} />
+              <Route path="/digital-contact" element={<QRCodeScannerComponent />} />
             </Routes>
           </Suspense>
         </div>
