@@ -52,6 +52,9 @@ const NavbarComponent: React.FC = () => {
             <LinkContainer to="/training">
               <Nav.Link className="text-white mx-2 fs-5">Training</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/contact">
+              <Nav.Link className="text-white mx-2 fs-5">Contact Us</Nav.Link>
+            </LinkContainer>
           </Nav>
           <Form className="d-flex" onSubmit={handleSearchSubmit}>
             <FormControl
