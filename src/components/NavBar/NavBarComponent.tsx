@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import styles from './NavBarComponent.module.css';
@@ -37,43 +37,42 @@ const NavbarComponent: React.FC = () => {
             Quantum Computer Learning
           </div>
         </Navbar.Brand>
-        
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <div className={`d-flex justify-content-between w-100 ${styles.navContent}`}>
-            <Nav className="me-auto">
+          <Nav className="me-auto">
             <LinkContainer to="/">
               <Nav.Link className="text-white mx-2 fs-5">Home</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/machine-learning">
-                <Nav.Link className="text-white mx-2 fs-5">Machine Learning</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/web-design">
-                <Nav.Link className="text-white mx-2 fs-5">Web Design</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/training">
-                <Nav.Link className="text-white mx-2 fs-5">Training</Nav.Link>
-              </LinkContainer>
-            </Nav>
-            <form className={`d-flex ${styles.searchForm}`} onSubmit={handleSearchSubmit}>
-              <input
-                className="form-control me-2 fs-5"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-             <button className={`btn ${styles['search-button']}  text-white mx-2 fs-5`} type="submit">Search</button>
-
-            </form>
-            <Button
-              variant="outline-light"
-              className="ms-2"
-              onClick={handleAuthAction}
-            >
-              {user ? 'Log Out' : 'Login'}
+            </LinkContainer>
+            <LinkContainer to="/machine-learning">
+              <Nav.Link className="text-white mx-2 fs-5">Machine Learning</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/web-design">
+              <Nav.Link className="text-white mx-2 fs-5">Web Design</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/training">
+              <Nav.Link className="text-white mx-2 fs-5">Training</Nav.Link>
+            </LinkContainer>
+          </Nav>
+          <Form className="d-flex" onSubmit={handleSearchSubmit}>
+            <FormControl
+              type="search"
+              placeholder="Search"
+              className="me-2 fs-5"
+              aria-label="Search"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+            <Button variant="outline-light" type="submit" className="fs-5">
+              Search
             </Button>
-          </div>
+          </Form>
+          <Button
+            variant="outline-light"
+            className="ms-2"
+            onClick={handleAuthAction}
+          >
+            {user ? 'Log Out' : 'Login'}
+          </Button>
         </Navbar.Collapse>
       </Navbar>
     </div>
