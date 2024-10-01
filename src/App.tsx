@@ -13,7 +13,7 @@ const TrainingComponent = React.lazy(() => import('../src/components/Training/Tr
 const LoginComponent = React.lazy(() => import('./components/LogIn/LoginComponent'));
 const SearchResults = React.lazy(() => import('../src/components/SearchResults/SearchResultsComponent'));
 const ContactComponent = React.lazy(() => import('../src/components/Contact/ContactComponent'));
-const QRCodeScannerComponent = React.lazy(() => import('../src/components/QRCodeScanner/QRCodeScannerComponent'));
+const VCardPage = React.lazy(() => import('../src/components/vCard/vCardPage')); // Import the VCardPage component
 
 function App() {
   return (
@@ -23,14 +23,14 @@ function App() {
         <div className="content-wrapper"> {/* Add this wrapper */}
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/login" element={<LoginComponent />} />
+              <Route path="/" element={<HomeComponent />} />
+              <Route path="/login" element={<LoginComponent />} />
               <Route path="/machine-learning" element={<MachineLearningComponent />} />
               <Route path="/web-design" element={<WebDesignComponent />} />
               <Route path="/training" element={<TrainingComponent />} />
               <Route path="/search" element={<SearchResults />} />
               <Route path="/contact" element={<ContactComponent />} />
-              <Route path="/digital-contact" element={<QRCodeScannerComponent />} />
+              <Route path="/vcard" element={<VCardPage />} /> {/* Add the route for VCardPage */}
             </Routes>
           </Suspense>
         </div>
